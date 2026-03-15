@@ -1,0 +1,131 @@
+footer {
+    display: none !important;
+}
+.pdf_viewer .top-panel{
+    display: none !important;
+}
+.chatbot_view .top-panel {
+    display: none !important;
+}
+
+.jumping-dots span {
+  position: relative;
+  bottom: 0px;
+  animation: jump 2s infinite;
+}
+.jumping-dots .dot-1{
+  animation-delay: 200ms;
+}
+.jumping-dots .dot-2{
+  animation-delay: 400ms;
+}
+.jumping-dots .dot-3{
+  animation-delay: 600ms;
+}
+
+@keyframes jump {
+  0%   {bottom: 0px;}
+  20%  {bottom: 5px;}
+  40%  {bottom: 0px;}
+}
+
+.inactive_div {
+    pointer-events: none;
+    opacity: .5;
+}
+
+/*.gallery-container .grid-container {*/
+/*        width: 50px;*/
+/*}*/
+
+.upload_button {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.upload_button button {
+    background-color: #007bff !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.upload_button button:hover {
+    background-color: #0056b3 !important;
+}
+
+/* Gallery hover effect - targeting Gradio Gallery structure */
+.preview_im_element .gallery-item {
+    position: relative !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+}
+
+.preview_im_element .gallery-item:hover {
+    transform: scale(1.05) !important;
+    z-index: 10 !important;
+}
+
+/* Semi-transparent grey overlay on hover */
+.preview_im_element .gallery-item::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: rgba(128, 128, 128, 0.8) !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+}
+
+.preview_im_element .gallery-item:hover::before {
+    opacity: 1 !important;
+}
+
+/* Hide all default captions and buttons */
+.preview_im_element .gallery-item .caption,
+.preview_im_element .gallery-item button,
+.preview_im_element .gallery-item [role="button"] {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Style our custom hover text */
+.preview_im_element .gallery-item .custom-hover-text {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    color: white !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+    max-width: 85% !important;
+    line-height: 1.4 !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    padding: 8px 12px !important;
+    border-radius: 6px !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    border: none !important;
+    outline: none !important;
+    display: block !important;
+}
+
+.preview_im_element .gallery-item:hover .custom-hover-text {
+    opacity: 1 !important;
+}

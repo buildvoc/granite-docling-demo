@@ -1,0 +1,59 @@
+[tool.poetry]
+name = "huggingface-gradio-template"
+version = "0.1.0"
+description = "A boilerplate template for an IBM Granite Huggingface Spaces Gradio Demo"
+authors = ["James Sutton <james.sutton@uk.ibm.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+gradio = "5.9.1"
+torch = "2.4.0"
+spaces = "0.30.4"
+transformers = "^4.47.1"
+accelerate = "^1.2.1"
+docling_core = "^2.48.1"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^4.0.1"
+git-lint = "^0.1.2"
+ruff = "^0.8.3"
+pytest = "^8.3.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle
+    "F",   # pyflakes
+    "UP",  # pyupgrade
+    "D",   # pydocstyle
+    "I",   # isort
+    "B",   # bugbear
+    "ANN", # annotations
+    "N",   # pep8-naming
+    "C4",  # Comprehensions
+    "DTZ", # DatetimeZ
+    "Q",   # Quotes
+    "SIM", # Simplify
+    "RUF", # Ruff
+]
+ignore = ["D203", "D213"]
+fixable = ["ALL"]
+unfixable = []
+
+
+[tool.black]
+line-length = 120
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
